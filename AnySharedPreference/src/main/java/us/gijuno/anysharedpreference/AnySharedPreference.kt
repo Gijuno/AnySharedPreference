@@ -4,20 +4,9 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 
-class AnySharedPreference : Application() {
-    companion object {
-        lateinit var prefs: PreferenceUtil
-    }
-
-    override fun onCreate() {
-        prefs = PreferenceUtil(applicationContext)
-        super.onCreate()
-    }
-}
-
-class PreferenceUtil(context: Context) {
+class AnySharedPreference(context: Context) : Application() {
     private val prefs: SharedPreferences =
-        context.getSharedPreferences("prefs_name", Context.MODE_PRIVATE)
+        context.getSharedPreferences("AnySharedPreference", Context.MODE_PRIVATE)
 
     fun setString(key: String, str: String) {
         prefs.edit().putString(key, str).apply()
@@ -71,6 +60,7 @@ class PreferenceUtil(context: Context) {
         return prefs.edit().putString(key, value.joinToString(separator)).apply()
     }
 }
+
 
 // 데이터 저장
 // SharedPreference.prefs.setString("email", "abcd@gmail.com")
