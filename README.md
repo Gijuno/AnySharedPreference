@@ -1,6 +1,6 @@
 # AnySharedPreference [![](https://jitpack.io/v/Gijuno/AnySharedPreference.svg)](https://jitpack.io/#Gijuno/AnySharedPreference)
 
-## How to use;
+## Installation
 Add this code on your project
 ``` gradle
 // build.gradle (Module:)
@@ -21,4 +21,16 @@ dependencyResolutionManagement {
   }
 }
 ````
+
+## How to use
+```` kotlin
+// ex) set STRING and get STRING
+
+AnySharedPreference(context).setString("key", "value")
+
+val key = AnySharedPreference(context).setString("key", "value")
+
+Log.d("test", key)
+````
+
 
